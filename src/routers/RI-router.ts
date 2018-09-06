@@ -29,7 +29,7 @@ RIRouter.post('/update_inquiries', [
     console.log(req.session.user)
 
     try {
-      await RIDao.updateRI(+req.params.user_id, req.body.status, req.body.ri_id,req.session.user.username);
+      await RIDao.updateRI(+req.params.user_id, req.body.status, req.body.ri_id, req.session.user.username);
       resp.sendStatus(201);
     }
 
@@ -40,3 +40,27 @@ RIRouter.post('/update_inquiries', [
     return 1;
   }
 ]);
+
+RIRouter.get(``, [
+
+  async (req, resp) => {
+
+    try {
+
+      let reims = await RIDao.viewRI();
+      resp.json(reims);
+
+    }
+
+    catch (err) {
+
+      resp.sendStatus(500);
+
+    }
+
+  }
+
+])
+
+
+

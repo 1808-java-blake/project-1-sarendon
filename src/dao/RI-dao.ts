@@ -46,4 +46,15 @@ export async function updateRI(id:number, status: string, ri_id: number, resolve
       return 1;
     }
     
+    export async function viewRI():Promise<any>{
+
+      const client = await connectionPool.connect();
+      try{
+        const resp = await client.query(
+        `SELECT * FROM "RIS".ri`);
+        return resp.rows;
+      }finally{
+        client.release();
+      }
+    }
     
