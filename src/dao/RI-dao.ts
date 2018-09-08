@@ -51,7 +51,8 @@ export async function updateRI(id:number, status: string, ri_id: number, resolve
       const client = await connectionPool.connect();
       try{
         const resp = await client.query(
-        `SELECT * FROM "RIS".ri`);
+        `SELECT * FROM "RIS".ri
+          ORDER BY "RIS".ri.status DESC`);
         return resp.rows;
       }finally{
         client.release();

@@ -15,6 +15,10 @@ function addReinbToTable(reinb) {
   </tr>
   `
 }
+
+
+
+
 fetch(`http://localhost:8888/ri/`)
 
   .then(res => res.json())
@@ -27,3 +31,9 @@ fetch(`http://localhost:8888/ri/`)
   .catch(err => {
     console.log(err);
   })
+
+
+function filter(event) {
+
+
+}

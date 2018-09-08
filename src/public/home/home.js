@@ -4,7 +4,7 @@ function addReinbToTable(reinb) {
   // console.log(reinb);
   tbody.innerHTML += `
   <tr>
-  <th scope="col">${reinb.RIid}</th>
+  <th scope="col" >${reinb.RIid}</th>
   <th scope="col">${reinb.amount}</th>
   <th scope="col">${reinb.type}</th>
   <th scope="col">${reinb.status}</th>
