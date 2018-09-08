@@ -1,20 +1,22 @@
 function addReinbToTable(reinb) {
-  const tbody = document.getElementById('viewUser-table');
+  const tbody = document.getElementById('rei-table-body');
 
   // console.log(reinb);
   tbody.innerHTML += `
   <tr>
-  <th scope "col">${reinb.user_id}</th>
-  <th scope="col">${reinb.ri_id}</th>
-  <th scope="col">${reinb.amount}</th>
-  <th scope="col">${reinb.type}</th>
-  <th scope="col">${reinb.status}</th>
-  <th scope="col">${reinb.submitted}</th>
-  <th scope="col">${reinb.resolved}</th>
-  <th scope="col">${reinb.resolver}</th>
-  </tr>
-  `
+  <td scope "col" >${reinb.user_id}</td>
+  <td scope="col">${reinb.ri_id}</td>
+  <td scope="col">${reinb.amount}</td>
+  <td scope="col">${reinb.type}</td>
+  <td scope="col">${reinb.status}</td>
+  <td scope="col">${reinb.submitted}</td>
+  <td scope="col">${reinb.resolved}</td>
+  <td scope="col" >${reinb.resolver}</td>
+  </tr> `
 }
+
+
+ 
 
 
 

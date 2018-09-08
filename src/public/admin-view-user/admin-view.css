@@ -1,7 +1,14 @@
-#content-container {
+ #content-container {
     margin-top: 2.5em;
   }
   
   #submit-button {
     max-width: 7em;
-  }
+  } 
+
+
+
+tr{
+
+border-spacing:20px
+}
