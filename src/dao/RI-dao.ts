@@ -17,7 +17,7 @@ let d = new Date();
           (user_id, amount, type, status, submitted, resolved, resolver)
           VALUES ($1, $2, $3, $4, $5, $6, $7)
           RETURNING RI_id`, [RI.userId , RI.amount, RI.type, 'pending', 
-          ` ${d.getMonth()} - ${d.getDate()} - ${d.getFullYear()}` , 'pending', 'pending' ]);
+          ` ${d.getMonth()+1} - ${d.getDate()} - ${d.getFullYear()}` , 'pending', 'pending' ]);
       return resp.rows[0].RI_id;
     } finally {
       client.release();
@@ -37,7 +37,7 @@ export async function updateRI(id:number, status: string, ri_id: number, resolve
             `UPDATE "RIS".ri 
             SET resolved = $1, resolver = $2, status = $4
             WHERE ri_id = $3`,
-             [` ${d.getMonth()} - ${d.getDate()} - ${d.getFullYear()}` , 
+             [` ${d.getMonth()+1} - ${d.getDate()} - ${d.getFullYear()}` , 
             resolver, ri_id , status]);
             return 1;
       } finally {
